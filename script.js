@@ -27,6 +27,9 @@ function addItemToList() {
 function showItems(data, index) {
     var task = document.createElement('li');
     task.setAttribute("id", `todo${index}`);
+    task.setAttribute("draggable", "true");
+    task.setAttribute("ondragstart", "drag(event)");
+    task.setAttribute("class", "draggable")
     var taskDescription = `<input class="checkboxes" type="checkbox" onChange="defineCheckbox(${index})" 
                             ${data.checkboxAtivo? "checked":""} >
                             <span class="btnDelItem" onClick="delItemFromList(${index})">&#128465;
@@ -73,3 +76,8 @@ function refreshList() {
 function returnItemsLeft() {
     return listItemsArray.length;
 }
+
+const dragAndDropArea = document.getElementById("taskList");
+new Sortable(dragAndDropArea, {
+    animation: 150
+});
