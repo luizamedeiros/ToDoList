@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <title> Lista de Afazeres</title>
+</head>
+
+<body>
+    <header>
+        <div id="header-container">
+            <h1> &#9745; Lista de Afazeres</h1>
+            <nav>
+                <a href="index.html">Minha lista</a>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div class="list-container">
+            <h2>Minha lista</h2>
+            <form onsubmit="addItemToList()">
+                <label id="labelInput" for="inputItem">Item a adicionar:  </label>
+                <input type="text" id="inputItem" placeholder="Item" required>
+                <button id='btnAdd' type='submit'>+</button>
+            </form>
+            <ul id="taskList">
+            </ul>
+            <p id='del-all' onclick="deleteAll()"> Deletar todos os itens </p>
+        </div>
+    </section>
+</body>
+
+</html>
